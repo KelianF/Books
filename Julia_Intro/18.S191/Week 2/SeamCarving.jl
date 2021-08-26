@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.20
+# v0.14.1
 
 using Markdown
 using InteractiveUtils
@@ -19,6 +19,16 @@ begin
 	Pkg.activate(tempname())
 end
 
+# ╔═╡ e196fa66-eef5-11ea-2afe-c9fcb6c48937
+# Poor man's Project.toml
+
+Pkg.add(["Images",
+		 "ImageMagick",
+		 "PlutoUI",
+		 "Hyperscript",
+		 "ImageFiltering"])
+
+
 # ╔═╡ 0316b94c-eef6-11ea-19bc-dbc959901bb5
 begin
 	using Images
@@ -30,16 +40,6 @@ end
 
 # ╔═╡ fe19ad0a-ef04-11ea-1e5f-1bfcbbb51302
 using PlutoUI
-
-# ╔═╡ e196fa66-eef5-11ea-2afe-c9fcb6c48937
-# Poor man's Project.toml
-
-Pkg.add(["Images",
-		 "ImageMagick",
-		 "PlutoUI",
-		 "Hyperscript",
-		 "ImageFiltering"])
-
 
 # ╔═╡ cb335074-eef7-11ea-24e8-c39a325166a1
 md"""
@@ -67,7 +67,7 @@ begin
 "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/758px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
 		"https://web.mit.edu/facilities/photos/construction/Projects/stata/1_large.jpg",
 	]
-	img = load(download(example_urls[1]))
+	img = load(download(example_urls[7]))
 end
 
 # ╔═╡ 8340cf20-f079-11ea-1665-f5864bc49cb9

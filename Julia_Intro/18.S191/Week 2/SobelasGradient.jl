@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.20
+# v0.14.1
 
 using Markdown
 using InteractiveUtils
@@ -15,6 +15,9 @@ end
 
 # ╔═╡ 15a4ba3e-f0d1-11ea-2ef1-5ff1dee8795f
 using Pkg
+
+# ╔═╡ 1ab1c808-f0d1-11ea-03a7-e9854427d45f
+Pkg.activate(mktempdir())
 
 # ╔═╡ 21e744b8-f0d1-11ea-2e09-7ffbcdf43c37
 begin
@@ -37,9 +40,6 @@ begin
 	using ImageMagick
 	using ImageFiltering
 end
-
-# ╔═╡ 1ab1c808-f0d1-11ea-03a7-e9854427d45f
-Pkg.activate(mktempdir())
 
 # ╔═╡ 10f850fc-f0d1-11ea-2a58-2326a9ea1e2a
 set_default_plot_size(12cm, 12cm)
@@ -102,14 +102,11 @@ brightness(c) = 0.3 * c.r + 0.59 * c.g + 0.11 * c.b
 # ╔═╡ 0ccf76e4-f0d9-11ea-07c9-0159e3d4d733
 @bind img_select Radio(["disc", "mario"], default="disc")
 
-# ╔═╡ 236dab08-f13d-11ea-1922-a3b82cfc7f51
-begin
-	url = "http://files.softicons.com/download/game-icons/super-mario-icons-by-sandro-pereira/png/32/Retro%20Mario.png"
-	img = Dict(
-		"disc" => disc(25),
-		"mario" => load(download(url))
-	)[img_select]
-end
+# ╔═╡ ccbcc7ef-72fd-4ac9-a73b-508cb6305182
+url1 = "https://cdn.icon-icons.com/icons2/206/PNG/256/Paper_Mario_24675.png"
+
+# ╔═╡ 96d38a21-0445-4f85-beef-9ffe5232cd0d
+test = load(download(url1))
 
 # ╔═╡ 03434682-f13b-11ea-2b6e-11ad781e9a51
 md"""Show $G_x$ $(@bind Gx CheckBox())
@@ -215,9 +212,9 @@ end
 
 # ╔═╡ 7864bd00-f146-11ea-0020-7fccb3913d8b
 let
-	∇x, ∇y = partial_derivatives(img)
+	∇x, ∇y = partial_derivatives(img1)
 
-	to_show = (x -> RGB(0, 0, 0)).(zeros(size(img)))
+	to_show = (x -> RGB(0, 0, 0)).(zeros(size(img1)))
 	if Gx && Gy
 		edged = sqrt.(∇x.^2 + ∇y.^2)
 		to_show = Gray.(edged) / maximum(edged)
@@ -232,6 +229,21 @@ let
 	)
 end
 
+# ╔═╡ 11d0dcad-7493-46ba-85b4-c02ba5f42295
+img = Dict(
+		"disc" => disc(25),
+		"mario" => load(download(url))
+	)[img_select]
+
+# ╔═╡ 236dab08-f13d-11ea-1922-a3b82cfc7f51
+begin
+	url = "https://cdn.icon-icons.com/icons2/206/PNG/256/Paper_Mario_24675.png"
+	img = Dict(
+		"disc" => disc(25),
+		"mario" => load(download(url))
+	)[img_select]
+end
+
 # ╔═╡ Cell order:
 # ╠═15a4ba3e-f0d1-11ea-2ef1-5ff1dee8795f
 # ╠═1ab1c808-f0d1-11ea-03a7-e9854427d45f
@@ -242,6 +254,9 @@ end
 # ╟─fe3559e0-f13b-11ea-06c8-a314e44c20d6
 # ╟─b7ea8a28-f0d7-11ea-3e98-7b19a1f58304
 # ╟─0ccf76e4-f0d9-11ea-07c9-0159e3d4d733
+# ╠═ccbcc7ef-72fd-4ac9-a73b-508cb6305182
+# ╠═96d38a21-0445-4f85-beef-9ffe5232cd0d
+# ╠═11d0dcad-7493-46ba-85b4-c02ba5f42295
 # ╟─236dab08-f13d-11ea-1922-a3b82cfc7f51
 # ╟─03434682-f13b-11ea-2b6e-11ad781e9a51
 # ╟─ca13597a-f168-11ea-1a2c-ff7b98b7b2c7

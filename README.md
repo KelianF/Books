@@ -4,5 +4,5 @@
 
 [<img src="https://www.dbooks.org/img/books/1617295981.jpg" width="300" height="400">](https://github.com/KelianF/Books/tree/master/ClassicComputerScienceProblems)
 
-
+[<img src="https://images-na.ssl-images-amazon.com/images/I/51Ck7Mc4FWL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg" width="300" height="400">](https://github.com/KelianF/Books/tree/master/Simulations/ComputerSimulation_AFoundationalApproach)
 

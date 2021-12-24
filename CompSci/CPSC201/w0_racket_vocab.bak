@@ -1,0 +1,5 @@
+#lang racket
+
+; functions
+; parenthesis encloses when called
+; define is a function

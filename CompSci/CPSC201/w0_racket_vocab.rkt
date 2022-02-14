@@ -53,7 +53,7 @@
 ; '(1 2 3 4 5)
 
 ; Void and Undefined
-; anything you haven't defined and isin'g a datatype already
+; Anything you haven't defined and isn't a datatype already
 ; When debugging and running into a VOID error, check your conditions
 
 ; a basic if statement

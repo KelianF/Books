@@ -36,7 +36,7 @@
 ; 3.14159.  You will receive no credit for this problem if you leave
 ; the number as 0.
 
-(define hours 2)
+(define hours 0.01)
 
 ; ********************************************************
 ; ** problem 1 ** (5 points)
@@ -66,8 +66,16 @@
 
 ; Your procedure will be tested automatically with positive arguments.
 
+(define (toPound mass)
+  (exact-floor (* mass 2.2)))
+
+(define (toOunces mass)
+  (exact-floor (* (- (* mass 2.2) (toPound mass)) 16)))
+
 (define (kg2lb mass)
-  empty)
+  (list (toPound mass) ( if (= (toPound mass) 1) 'pound 'pounds)
+        (toOunces mass) ( if (= (toOunces mass) 1) 'ounce 'ounces)
+        ) )
     
 ; ********************************************************
 ; ** problem 2 ** (4 points)
@@ -89,7 +97,7 @@
 ; tested automatically, and will be called only with no arguments.
 
 (define (timezone)
-  empty)
+  "KST")
 
 ; ********************************************************
 ; ** problem 3 ** (10 points)

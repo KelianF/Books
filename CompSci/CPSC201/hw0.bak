@@ -36,7 +36,7 @@
 ; 3.14159.  You will receive no credit for this problem if you leave
 ; the number as 0.
 
-(define hours 0)
+(define hours 2)
 
 ; ********************************************************
 ; ** problem 1 ** (5 points)

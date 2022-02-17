@@ -1,0 +1,12 @@
+#lang racket
+
+; count the number of elements in a list no tail recursively
+; (headcount '(1 2 3)) -> 3
+(define (headcount lst)
+  (if (empty? lst)
+      0
+      (+ 1 (headcount (cdr lst)))))
+
+(headcount '("a" 1 2 3 "b"))
+  
+

@@ -75,7 +75,7 @@
 ; of hours you spent doing this assignment Decimal numbers (eg, 6.237)
 ; are fine.  Exclude time spent reading.
 
-(define hours 0)
+(define hours 0.01)
 
 ; ********************************************************
 ; ** problem 1 ** (9 points)

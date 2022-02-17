@@ -56,7 +56,7 @@
 ; returns #f if list is not.
 ; (empty? '()) -> #t
 ; (empty? '(1 2 3)) -> #f
-# (empty? empty) -> #t
+; (empty? empty) -> #t
 
 
 

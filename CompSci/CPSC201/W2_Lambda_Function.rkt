@@ -22,3 +22,5 @@
 ; add a 0 onto that list, and then apppend another list with the word "Hello"
 ; (my-map '(1 2 "Hello") (append '(hello) (cons 0 (each element) ) -> doesn't work
 ; (my-map '(1 2 "Hello") (lambda (x) (append '(hello) (cons 0 (list x))))
+
+(my-map '(1 2 "Hello") (lambda (x) (append '(hello) (cons 0 (list x)))))
